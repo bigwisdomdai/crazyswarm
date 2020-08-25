@@ -40,7 +40,7 @@ class Crazyswarm:
             crazyflies_yaml = open(crazyflies_yaml, 'r').read()
 
         if args.sim:
-            import crazyflieSim
+            from . import crazyflieSim
             self.timeHelper = crazyflieSim.TimeHelper(args.vis, args.dt, args.writecsv, disturbanceSize=args.disturbance, maxVel=args.maxvel)
             self.allcfs = crazyflieSim.CrazyflieServer(self.timeHelper, crazyflies_yaml)
         else:
